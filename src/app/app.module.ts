@@ -8,13 +8,17 @@ import { LayoutComponent } from './layout/layout.component';
 import { NavigationComponent } from './layout/navigation/navigation.component';
 import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { MaterialModule } from './material/material.module';
+import { CountriesComponent } from './countries/countries.component';
+import { SubscribersComponent } from './subscribers/subscribers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     NavigationComponent,
-    DashboardComponent
+    DashboardComponent,
+    CountriesComponent,
+    SubscribersComponent
   ],
   imports: [
     BrowserModule,
