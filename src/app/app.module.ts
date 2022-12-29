@@ -10,6 +10,8 @@ import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { MaterialModule } from './material/material.module';
 import { CountriesComponent } from './countries/countries.component';
 import { SubscribersComponent } from './subscribers/subscribers.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LayoutRoutingModule } from './layout/layout-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { SubscribersComponent } from './subscribers/subscribers.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    LayoutRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
