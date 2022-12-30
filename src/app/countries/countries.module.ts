@@ -5,6 +5,7 @@ import { CountriesRoutingModule } from './countries-routing.module';
 import { CountriesComponent } from './countries.component';
 import { ListCountriesComponent } from './list-countries/list-countries.component';
 import { CountriesService } from './service/countries.service';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CountriesService } from './service/countries.service';
   ],
   imports: [
     CommonModule,
-    CountriesRoutingModule
+    CountriesRoutingModule,
+    MaterialModule
   ],
   providers: [
     CountriesService

@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
@@ -17,15 +17,32 @@ export class AuthService {
     return this.http.post(`${this.BaseUrl}account/login`, {UserName, Password});
   }
 
-  getUserData(): Observable<any>{
+  // getUserData(): Observable<any>{
+  //   const token = localStorage.getItem('token');
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //       'Authorization': `Bearer ${token}`
+  //     })
+  //   }
+  //   return this.http.get(`${this.BaseUrl}account/login`, httpOptions);
+  // }
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  
     const token = localStorage.getItem('token');
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      })
+
+    let request = req;
+
+    if (token) {
+      request = req.clone({
+        setHeaders: {
+          authorization: `Bearer ${ token }`
+        }
+      });
     }
-    return this.http.get<any>(`${this.BaseUrl}account/login`, httpOptions);
+
+    return next.handle(request);
   }
 
   isAuthenticated(): boolean {
