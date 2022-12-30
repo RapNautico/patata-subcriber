@@ -1,0 +1,24 @@
+.example-card{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mat-form-field {
+    display: block;
+    position: relative;
+    text-align: left;
+}
+
+.content{
+    width: 100%;
+}
+
+.login-title{
+    margin-top: 5% !important;
+    margin-bottom: 9%;
+}

@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { CountriesRoutingModule } from './countries-routing.module';
 import { CountriesComponent } from './countries.component';
 import { ListCountriesComponent } from './list-countries/list-countries.component';
+import { CountriesService } from './service/countries.service';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -13,7 +15,11 @@ import { ListCountriesComponent } from './list-countries/list-countries.componen
   ],
   imports: [
     CommonModule,
-    CountriesRoutingModule
+    CountriesRoutingModule,
+    MaterialModule
+  ],
+  providers: [
+    CountriesService
   ]
 })
 export class CountriesModule { }

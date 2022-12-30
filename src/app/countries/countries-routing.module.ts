@@ -8,7 +8,7 @@ const routes: Routes = [
     path: 'countries',
     component: CountriesComponent,
     children: [
-      { path: '', component: ListCountriesComponent},
+      { path: '', component: CountriesComponent},
       { path: '**', redirectTo: 'countries'}
     ]
   }
