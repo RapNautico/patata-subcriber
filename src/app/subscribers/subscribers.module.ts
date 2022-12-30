@@ -6,6 +6,7 @@ import { SubscribersComponent } from './subscribers.component';
 import { SaveSubscribersComponent } from './save-subscribers/save-subscribers.component';
 import { ShowSubscribersComponent } from './show-subscribers/show-subscribers.component';
 import { ListSubscribersComponent } from './list-subscribers/list-subscribers.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ListSubscribersComponent } from './list-subscribers/list-subscribers.co
   ],
   imports: [
     CommonModule,
-    SubscribersRoutingModule
+    SubscribersRoutingModule,
+    MaterialModule
   ]
 })
 export class SubscribersModule { }
