@@ -14,6 +14,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MaterialModule } from '../material/material.module';
+import { AuthGuard } from '../auth/guard/auth.guard';
 
 
 @NgModule({
@@ -35,6 +36,9 @@ import { MaterialModule } from '../material/material.module';
     MatCardModule,
     MatMenuModule,
     MaterialModule
+  ],
+  providers: [
+    AuthGuard
   ]
 })
 

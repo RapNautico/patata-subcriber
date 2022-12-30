@@ -1,1 +1,27 @@
-<p>list-countries works!</p>
+<section class="container-fluid with-maxwidth">
+	<article class="">
+		<h2 class="article-title">Countries</h2>
+		<div class="box box-default fadeIn fast">
+			<div class="box-body table-responsive">
+				<div>
+					<table class="mdl-data-table table table-bordered table-striped mt-3">
+						<thead>
+							<tr>
+								<th class="mdl-data-table__cell--non-numeric" style="width: 25%;">Code</th>
+								<th class="mdl-data-table__cell--non-numeric" style="width: 25%;">Name</th>
+								<th class="mdl-data-table__cell--non-numeric" style="width: 25%;">PhoneCode</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let country of countries">
+								<td class="mdl-data-table__cell--non-numeric">{{country.code}}</td>
+								<td class="mdl-data-table__cell--non-numeric">{{country.name}}</td>
+                                <td class="mdl-data-table__cell--non-numeric">{{country.phonecode}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
