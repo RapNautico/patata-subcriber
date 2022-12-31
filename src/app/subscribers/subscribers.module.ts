@@ -8,6 +8,7 @@ import { ShowSubscribersComponent } from './show-subscribers/show-subscribers.co
 import { ListSubscribersComponent } from './list-subscribers/list-subscribers.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditSubscriberComponent } from './edit-subscriber/edit-subscriber.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SubscribersComponent,
     SaveSubscribersComponent,
     ShowSubscribersComponent,
-    ListSubscribersComponent
+    ListSubscribersComponent,
+    EditSubscriberComponent
   ],
   imports: [
     CommonModule,

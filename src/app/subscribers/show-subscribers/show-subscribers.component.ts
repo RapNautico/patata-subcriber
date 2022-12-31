@@ -31,7 +31,6 @@ export class ShowSubscribersComponent implements OnInit {
     this.subscribersService.getSubscriber(id).subscribe(
       (data) =>{
         this.subscriber = data
-        console.log(data);
       }
     )
   }
