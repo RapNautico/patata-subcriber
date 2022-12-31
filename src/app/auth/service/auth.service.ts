@@ -17,17 +17,6 @@ export class AuthService {
     return this.http.post(`${this.BaseUrl}account/login`, {UserName, Password});
   }
 
-  // getUserData(): Observable<any>{
-  //   const token = localStorage.getItem('token');
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'application/json',
-  //       'Authorization': `Bearer ${token}`
-  //     })
-  //   }
-  //   return this.http.get(`${this.BaseUrl}account/login`, httpOptions);
-  // }
-
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
   
     const token = localStorage.getItem('token');

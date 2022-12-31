@@ -19,3 +19,19 @@
 .dashboard-card-content {
   text-align: center;
 }
+@media only screen   
+and (min-device-width : 768px)   
+and (max-device-width : 1029px){
+  .dashboard{
+    height: 560px !important;
+  }
+}
+
+@media only screen   
+and (min-width: 1030px)   
+and (max-width: 1369px){
+  .dashboard{
+    height: 555px !important;
+  }
+
+}

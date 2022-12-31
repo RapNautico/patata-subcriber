@@ -7,6 +7,8 @@ import { SaveSubscribersComponent } from './save-subscribers/save-subscribers.co
 import { ShowSubscribersComponent } from './show-subscribers/show-subscribers.component';
 import { ListSubscribersComponent } from './list-subscribers/list-subscribers.component';
 import { MaterialModule } from '../material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditSubscriberComponent } from './edit-subscriber/edit-subscriber.component';
 
 
 @NgModule({
@@ -14,12 +16,15 @@ import { MaterialModule } from '../material/material.module';
     SubscribersComponent,
     SaveSubscribersComponent,
     ShowSubscribersComponent,
-    ListSubscribersComponent
+    ListSubscribersComponent,
+    EditSubscriberComponent
   ],
   imports: [
     CommonModule,
     SubscribersRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class SubscribersModule { }

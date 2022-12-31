@@ -1,16 +1,7 @@
 <section class="container-fluid with-maxwidth">
     <article>
-        <h2 class="article-title">New Subscriber</h2>
+        <h2 class="article-title">Edit Subscriber</h2>
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="pull-right">
-                        <button type="button" mat-fab color="accent" class="mat-mini-fab mat-accent complete" (click)="setSubscriber()">
-                            <i class="material-icons" style="margin-top: 0px;">add</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
             <form role="form" #form="ngForm">
                 <table class="table mt-3">
                     <thead>
@@ -49,7 +40,7 @@
                             <input type="text" name="subscriber.Topics" id="subscriber.Topics" class="form-control" [(ngModel)]="subscriber.Topics">
                         </td>
                         <td>
-                            <a style="color: red;" (click)="deleteSubscriber(subscribers.Id)">
+                            <a style="color: red;" (click)="deleteSubscriber(subscriber.Id)">
                                 <i class="material-icons">delete</i>
                             </a>
                         </td>
@@ -58,7 +49,7 @@
                   </table>
                 </form>
                 <div class="mb-5">
-                  <button mat-raised-button color="primary" (click)="createSubscriber()" [disabled]="!form.valid" *ngIf="!saved">Save</button>
+                  <button mat-raised-button color="primary" (click)="updateSubscriber()" [disabled]="!form.valid" *ngIf="!saved">Save</button>
                   <button mat-raised-button color="warn" (click)="returnBack()" style="margin-left: 10px;" *ngIf="!saved">Cancel</button>
                 </div>
         </div>

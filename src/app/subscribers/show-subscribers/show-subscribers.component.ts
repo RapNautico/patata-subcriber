@@ -1,4 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SubscribersService } from '../service/subscribers.service';
 
 @Component({
   selector: 'app-show-subscribers',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowSubscribersComponent implements OnInit {
 
-  constructor() { }
+  form_name:string = "";
+  subscriber:any = [];
+  save:boolean = false;
+
+  constructor(private subscribersService: SubscribersService,
+    private route: ActivatedRoute,
+    private location: Location) {
+      route.params.subscribe(
+        (param) =>{
+          this.getSubscriber(param['id']);
+        }
+      )
+     }
 
   ngOnInit(): void {
   }
 
+  getSubscriber(id: any){
+    this.subscribersService.getSubscriber(id).subscribe(
+      (data) =>{
+        this.subscriber = data
+      }
+    )
+  }
+
+  returnBack(){
+    this.location.back();
+  }
 }
