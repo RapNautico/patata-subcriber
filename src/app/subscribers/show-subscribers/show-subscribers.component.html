@@ -1,1 +1,45 @@
-<p>show-subscribers works!</p>
+<section>
+    <article>
+        <div class="container">
+            <div class="card mt-4 mb-3">
+                <div class="row g-0">
+                    <h3 class="card-title">Subscriber Information</h3>
+                    <div class="col-md-4">
+                        <img src="../../../assets/images/chat.jpg" class="img-fluid rounded-start" alt="user">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <p class="card-text">System Id: <span class="text-muted">{{subscriber.SystemId}}</span></p>
+                            <p class="card-text">Area: <span class="text-muted">{{subscriber.Area}}</span></p>
+                            <p class="card-text">Public Id: <span class="text-muted">{{subscriber.PublicId}}</span></p>
+                            <p class="card-text">Country Code: <span class="text-muted">{{subscriber.CountryCode}}</span></p>
+                            <p class="card-text">Country Name: <span class="text-muted">{{subscriber.CountryName}}</span></p>
+                            <p class="card-text">Name: <span class="text-muted">{{subscriber.Name}}</span></p>
+                            <p class="card-text">Email: <span>{{subscriber.Email}}</span></p>
+                            <p class="card-text">Job Title: <span class="text-muted">{{subscriber.JobTitle}}</span></p>
+                            <p class="card-text">Phone Number: <span class="text-muted">{{subscriber.PhoneNumber}}</span></p>
+                            <p class="card-text">Phone Code And Number: <span class="text-muted">{{subscriber.PhoneCodeAndNumber}}</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <p class="card-text">Last Activity Utc: <span class="text-muted">{{subscriber.LastActivityUtc}}</span></p>
+                            <p class="card-text">Las Activity: <span class="text-muted">{{subscriber.LasActivity}}</span></p>
+                            <p class="card-text">Subscription Date: <span class="text-muted">{{subscriber.SubscriptionDate}}</span></p>
+                            <p class="card-text">Subscription Method: <span class="text-muted">{{subscriber.SubscriptionMethod}}</span></p>
+                            <p class="card-text">Subscription State: <span class="text-muted">{{subscriber.SubscriptionState}}</span></p>
+                            <p class="card-text">Subscription State Description: <span class="text-muted">{{subscriber.SubscriptionStateDescription}}</span></p>
+                            <p class="card-text">Topics: <span class="text-muted">{{subscriber.Topics}}</span></p>
+                            <p class="card-text">Activity: <span class="text-muted">{{subscriber.Activity}}</span></p>
+                            <p class="card-text">Connection State: <span class="text-muted">{{subscriber.ConnectionState}}</span></p>
+                            <p class="card-text">Id: <span class="text-muted">{{subscriber.Id}}</span></p>
+                        </div>
+                    </div>
+                </div>
+                <i (click)="returnBack();" class="material-icons" style="position: fixed; cursor: pointer;">
+                    keyboard_backspace
+                </i>
+            </div>
+        </div>
+    </article>
+</section>

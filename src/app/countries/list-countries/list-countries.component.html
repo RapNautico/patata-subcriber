@@ -8,7 +8,7 @@
 					<input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
 				  </mat-form-field>
 				  
-				  <div class="mat-elevation-z8">
+				  <div class="example-container mat-elevation-z8">
 					<table mat-table [dataSource]="dataSource">
 				  
 					  <!-- ID Column -->
@@ -39,13 +39,13 @@
 					  </tr>
 					</table>
 				  
-					<mat-paginator 
-								[length]="countries.Count" 
-								[pageSize]="paginator.pageSize"
-								[pageIndex]="paginator.pageIndex" 
-								aria-label="Select page of countries.Data"
-								(page)="OnPageChange($event)"></mat-paginator>
-				  </div>
+				</div>
+				<mat-paginator 
+							[length]="countries.Count" 
+							[pageSize]="paginator.pageSize"
+							[pageIndex]="paginator.pageIndex" 
+							aria-label="Select page of countries.Data"
+							(page)="OnPageChange($event)"></mat-paginator>
 			</div>
 		</div>
 	</article>
