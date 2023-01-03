@@ -41,7 +41,6 @@ export class SaveSubscribersComponent implements OnInit {
     SubscriptionStateDescription: new FormControl("Pendiente"),
     SystemId: new FormControl(null),
     PublicId: new FormControl(null),
-    Id: new FormControl(null),
     ValidEmail: new FormControl(true),
     ConnectionState: new FormControl(2),
     CountryName: new FormControl("Colombia"),
@@ -104,7 +103,6 @@ export class SaveSubscribersComponent implements OnInit {
       SubscriptionStateDescription: this.subsForm.get('SubscriptionStateDescription')?.value,
       SystemId: this.subsForm.get('SystemId')?.value,
       PublicId: this.subsForm.get('PublicId')?.value,
-      Id: this.subsForm.get('Id')?.value,
       ValidEmail: this.subsForm.get('ValidEmail')?.value,
       ConnectionState: this.subsForm.get('ConnectionState')?.value,
       CountryName: this.subsForm.get('CountryName')?.value
@@ -119,7 +117,7 @@ export class SaveSubscribersComponent implements OnInit {
             horizontalPosition: 'right'
           });
           this.subscriber.Data = data
-          // this.router.navigate(['/app/subscribers']);
+          this.router.navigate(['/app/subscribers']);
         }
       )
     }
