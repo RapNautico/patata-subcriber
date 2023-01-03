@@ -13,9 +13,6 @@ img{
     margin-top: 2rem;
     margin-bottom: 5rem;
 }
-.card-body{
-    margin-top: 4rem;
-}
 
 @media only screen   
 and (min-device-width : 768px)   
@@ -33,6 +30,9 @@ and (max-device-width : 1029px){
         border-radius: 50%;
         margin-top: 3rem;
     }
+    .container{
+        height: 70vh;
+    }
 }
 @media only screen   
 and (min-width: 1030px)   
@@ -48,6 +48,13 @@ and (max-width: 1369px){
     
     img{
         border-radius: 50%;
-        margin-top: 3rem;
+        margin-top: 1rem;
+    }
+
+    .row{
+        height: 90%;
+    }
+    .container{
+        height: 70vh;
     }
 }

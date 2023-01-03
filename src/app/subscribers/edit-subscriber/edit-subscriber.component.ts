@@ -40,19 +40,16 @@ export class EditSubscriberComponent implements OnInit {
   }
 
   updateSubscriber(){
-    if (this.subscriber.Id == null) {
       this.subscribersService.updateSubscriber(this.subscriber).subscribe(
         (data) => {
-          console.log(data);
           this.snackBar.open('Subscriber successfully update.', '', {
             duration: 5000,
             panelClass: 'complet',
             horizontalPosition: 'right'
           });
-          this.router.navigate(['/app/subscribers']);
+          this.router.navigate([`/app/subscribers/${this.subscriber.Id}`]);
         }
       )
-    }
   }
 
   deleteSubscriber(id: any){

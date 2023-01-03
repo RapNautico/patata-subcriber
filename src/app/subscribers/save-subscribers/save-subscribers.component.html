@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <form role="form" #form="ngForm">
+            <form role="form" [formGroup]="subsForm" #form="ngForm">
                 <table class="table mt-3">
                     <thead>
                       <tr>
@@ -28,28 +28,28 @@
                     <tbody class="table-group-divider">
                       <tr>
                         <td>
-                            <input type="text" name="subscriber.Name" id="subscriber.Name" class="form-control" required [(ngModel)]="subscriber.Name">
+                            <input type="text" name="subscriber.Name" id="subscriber.Name" class="form-control" required formControlName="Name">
                         </td>
                         <td>
-                            <input type="email" name="subscriber.Email" id="subscriber.Email" class="form-control" required [(ngModel)]="subscriber.Email">
+                            <input type="text" name="subscriber.Email" id="subscriber.Email" class="form-control" required formControlName="Email">
                         </td>
                         <td>
-                            <input type="text" name="subscriber.CountryCode" id="subscriber.CountryCode" class="form-control" required [(ngModel)]="subscriber.CountryCode">
+                            <input type="text" name="subscriber.CountryCode" id="subscriber.CountryCode" class="form-control" required formControlName="CountryCode">
                         </td>
                         <td>
-                            <input type="number" name="subscriber.PhoneNumber" id="subscriber.PhoneNumber" class="form-control" required [(ngModel)]="subscriber.PhoneNumber">
+                            <input type="text" name="subscriber.PhoneNumber" id="subscriber.PhoneNumber" class="form-control" required formControlName="PhoneNumber">
                         </td>
                         <td>
-                            <input type="text" name="subscriber.Area" id="subscriber.Area" class="form-control" required [(ngModel)]="subscriber.Area">
+                            <input type="text" name="subscriber.Area" id="subscriber.Area" class="form-control" formControlName="Area">
                         </td>
                         <td>
-                            <input type="text" name="subscriber.JobTitle" id="subscriber.JobTitle" class="form-control" required [(ngModel)]="subscriber.JobTitle">
+                            <input type="text" name="subscriber.JobTitle" id="subscriber.JobTitle" class="form-control" formControlName="JobTitle">
                         </td>
                         <td>
-                            <input type="text" name="subscriber.Topics" id="subscriber.Topics" class="form-control" [(ngModel)]="subscriber.Topics">
+                            <input type="text" name="subscriber.Topics" id="subscriber.Topics" class="form-control" formControlName="Topics">
                         </td>
                         <td>
-                            <a style="color: red;" (click)="deleteSubscriber(subscribers.Id)">
+                            <a style="color: red;" (click)="deleteSubscriber(subscribers)">
                                 <i class="material-icons">delete</i>
                             </a>
                         </td>
@@ -58,7 +58,7 @@
                   </table>
                 </form>
                 <div class="mb-5">
-                  <button mat-raised-button color="primary" (click)="createSubscriber()" [disabled]="!form.valid" *ngIf="!saved">Save</button>
+                  <button mat-raised-button color="primary" (click)="createSubscriber()" [disabled]="!subsForm.valid" *ngIf="!saved">Save</button>
                   <button mat-raised-button color="warn" (click)="returnBack()" style="margin-left: 10px;" *ngIf="!saved">Cancel</button>
                 </div>
         </div>
