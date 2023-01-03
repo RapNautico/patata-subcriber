@@ -10,7 +10,6 @@ import { Subscriber } from '../interface/subscriber';
 export class SubscribersService {
 
   publicIdCounter = 418;
-  IdCounter = 8584;
 
   BaseUrl = environment.BaseUrl;
 
@@ -33,8 +32,6 @@ export class SubscribersService {
     const subscribe = JSON.stringify(subscriber)
     this.publicIdCounter++;
     subscriber.PublicId = this.publicIdCounter;
-    this.IdCounter++;
-    subscriber.Id = this.IdCounter;
     return this.http.post(`${this.BaseUrl}subscribers/`, subscribe, httpOptions);
   }
 
