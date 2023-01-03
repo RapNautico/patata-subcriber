@@ -22,55 +22,26 @@ export class SubscribersService {
   }
 
   createSubscriber(subscriber: any){
-      const formData: FormData = new FormData();
-      if (subscriber.Name != null) {
-        formData.append('subscriber[Name]', subscriber.Name)
-      }
-      if (subscriber.Email != null) {
-        formData.append('subscriber[Email]', subscriber.Email)
-      }
-      if (subscriber.CountryCode != null) {
-        formData.append('subscriber[CountryCode]', subscriber.CountryCode)
-      }
-      if (subscriber.PhoneNumber != null) {
-        formData.append('subscriber[PhoneNumber]', subscriber.PhoneNumber)
-      }
-      if (subscriber.JobTitle != null) {
-        formData.append('subscriber[JobTitle]', subscriber.JobTitle)
-      }
-      if (subscriber.Area != null) {
-        formData.append('subscriber[Area]', subscriber.Area)
-      }
-      if (subscriber.Topics != null) {
-        formData.append('subscriber[Topics]', subscriber.Topics)
-      }
-      return this.http.post(`${this.BaseUrl}subscribers/`, formData);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    const subscribe = JSON.stringify(subscriber)
+    console.log(subscriber);
+    
+    return this.http.post(`${this.BaseUrl}subscribers/`, subscribe, httpOptions);
   }
 
   updateSubscriber(subscriber: any){
-    const formData: FormData = new FormData();
-    if (subscriber.Name != null) {
-      formData.append('subscriber[Name]', subscriber.Name)
-    }
-    if (subscriber.Email != null) {
-      formData.append('subscriber[Email]', subscriber.Email)
-    }
-    if (subscriber.CountryCode != null) {
-      formData.append('subscriber[CountryCode]', subscriber.CountryCode)
-    }
-    if (subscriber.PhoneNumber != null) {
-      formData.append('subscriber[PhoneNumber]', subscriber.PhoneNumber)
-    }
-    if (subscriber.JobTitle != null) {
-      formData.append('subscriber[JobTitle]', subscriber.JobTitle)
-    }
-    if (subscriber.Area != null) {
-      formData.append('subscriber[Area]', subscriber.Area)
-    }
-    if (subscriber.Topics != null) {
-      formData.append('subscriber[Topics]', subscriber.Topics)
-    }
-    return this.http.put<any>(`${this.BaseUrl}subscribers/${subscriber.id}`, formData);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    const subscribe = JSON.stringify(subscriber)
+    console.log(subscriber);
+    return this.http.put<any>(`${this.BaseUrl}subscribers/${subscriber.Id}`, subscribe, httpOptions);
   }
 
   deleteSubscriber(id: any){
