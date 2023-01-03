@@ -16,7 +16,7 @@ export class SaveSubscribersComponent implements OnInit {
 
   formName:string = "";
   saved:boolean = false;
-  subscriber:any = {};
+  subscriber:any = [];
   subscribers:any = [];
   subscribersDelete:any = [];
 
@@ -33,16 +33,18 @@ export class SaveSubscribersComponent implements OnInit {
     LastActivity: new FormControl(null),
     LastActivityString: new FormControl(null),
     LastActivityUtc: new FormControl(null),
-    PhoneCode: new FormControl(""),
-    PhoneCodeAndNumber: new FormControl(""),
+    PhoneCode: new FormControl("57"),
+    PhoneCodeAndNumber: new FormControl("(57)"),
     SubscriptionDate: new FormControl(null),
     SubscriptionMethod: new FormControl(0),
     SubscriptionState: new FormControl(0),
-    SubscriptionStateDescription: new FormControl(""),
+    SubscriptionStateDescription: new FormControl("Pendiente"),
     SystemId: new FormControl(null),
+    PublicId: new FormControl(null),
+    Id: new FormControl(null),
     ValidEmail: new FormControl(true),
     ConnectionState: new FormControl(2),
-    CountryName: new FormControl(""),
+    CountryName: new FormControl("Colombia"),
   })
 
 
@@ -101,6 +103,8 @@ export class SaveSubscribersComponent implements OnInit {
       SubscriptionState: this.subsForm.get('SubscriptionState')?.value,
       SubscriptionStateDescription: this.subsForm.get('SubscriptionStateDescription')?.value,
       SystemId: this.subsForm.get('SystemId')?.value,
+      PublicId: this.subsForm.get('PublicId')?.value,
+      Id: this.subsForm.get('Id')?.value,
       ValidEmail: this.subsForm.get('ValidEmail')?.value,
       ConnectionState: this.subsForm.get('ConnectionState')?.value,
       CountryName: this.subsForm.get('CountryName')?.value
