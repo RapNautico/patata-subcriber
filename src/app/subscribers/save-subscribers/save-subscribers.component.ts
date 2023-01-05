@@ -27,23 +27,7 @@ export class SaveSubscribersComponent implements OnInit {
     PhoneNumber: new FormControl(null, [Validators.required]),
     JobTitle:  new FormControl(""),
     Area: new FormControl(""),
-    Topics: new FormControl([]),
-    Activity: new FormControl('--'),
-    EndpointsCount: new FormControl(0),
-    LastActivity: new FormControl(null),
-    LastActivityString: new FormControl(null),
-    LastActivityUtc: new FormControl(null),
-    PhoneCode: new FormControl("57"),
-    PhoneCodeAndNumber: new FormControl("(57)"),
-    SubscriptionDate: new FormControl(null),
-    SubscriptionMethod: new FormControl(0),
-    SubscriptionState: new FormControl(0),
-    SubscriptionStateDescription: new FormControl("Pendiente"),
-    SystemId: new FormControl(null),
-    PublicId: new FormControl(null),
-    ValidEmail: new FormControl(true),
-    ConnectionState: new FormControl(2),
-    CountryName: new FormControl("Colombia"),
+    Topics: new FormControl([])
   })
 
 
@@ -51,7 +35,11 @@ export class SaveSubscribersComponent implements OnInit {
     private route: ActivatedRoute,
     private subscribersService: SubscribersService,
     public snackBar: MatSnackBar,
-    private location: Location) {}
+    private location: Location) {
+      if (this.subscribers.length == 0) {
+        this.setSubscriber();
+      }
+    }
 
   ngOnInit(): void {
     this.getSubcribers();
@@ -82,41 +70,27 @@ export class SaveSubscribersComponent implements OnInit {
   }
 
   createSubscriber(){
-    const subscriber = {
-      Name: this.subsForm.get('Name')?.value,
-      Email: this.subsForm.get('Email')?.value,
-      CountryCode: this.subsForm.get('CountryCode')?.value,
-      PhoneNumber: this.subsForm.get('PhoneNumber')?.value,
-      JobTitle: this.subsForm.get('JobTitle')?.value,
-      Area: this.subsForm.get('Area')?.value,
-      Topics: this.subsForm.get('Topics')?.value,
-      Activity: this.subsForm.get('Activity')?.value,
-      EndpointsCount: this.subsForm.get('EndpointsCount')?.value,
-      LastActivity: this.subsForm.get('LastActivity')?.value,
-      LastActivityString: this.subsForm.get('LastActivityString')?.value,
-      LastActivityUtc: this.subsForm.get('LastActivityUtc')?.value,
-      PhoneCode: this.subsForm.get('PhoneCode')?.value,
-      PhoneCodeAndNumber: this.subsForm.get('PhoneCodeAndNumber')?.value,
-      SubscriptionDate: this.subsForm.get('SubscriptionDate')?.value,
-      SubscriptionMethod: this.subsForm.get('SubscriptionMethod')?.value,
-      SubscriptionState: this.subsForm.get('SubscriptionState')?.value,
-      SubscriptionStateDescription: this.subsForm.get('SubscriptionStateDescription')?.value,
-      SystemId: this.subsForm.get('SystemId')?.value,
-      PublicId: this.subsForm.get('PublicId')?.value,
-      ValidEmail: this.subsForm.get('ValidEmail')?.value,
-      ConnectionState: this.subsForm.get('ConnectionState')?.value,
-      CountryName: this.subsForm.get('CountryName')?.value
+    const subscribers = {
+      Subscribers: [
+        {
+          Name: this.subsForm.get('Name')?.value,
+          Email: this.subsForm.get('Email')?.value,
+          CountryCode: this.subsForm.get('CountryCode')?.value,
+          PhoneNumber: this.subsForm.get('PhoneNumber')?.value,
+          JobTitle: this.subsForm.get('JobTitle')?.value,
+          Area: this.subsForm.get('Area')?.value,
+          Topics: this.subsForm.get('Topics')?.value,
+        }
+      ]
     }
     if (this.subscriber.Data.Id == null) {
-      this.subscribersService.createSubscriber(subscriber).subscribe(
+      this.subscribersService.createSubscriber(subscribers).subscribe(
         (data) => {
-          console.log('vamosss',data);
           this.snackBar.open('Subscriber successfully created.', '', {
             duration: 5000,
             panelClass: 'completo',
             horizontalPosition: 'right'
           });
-          this.subscriber.Data = data
           this.router.navigate(['/app/subscribers']);
         }
       )

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Subscriber } from '../interface/subscriber';
 
@@ -23,16 +24,15 @@ export class SubscribersService {
     return this.http.get(`${this.BaseUrl}subscribers/${id}`);
   }
 
-  createSubscriber(subscriber: any){
+  createSubscriber(subscribers: {Subscribers: Subscriber[]}){
+    const token = localStorage.getItem('token');
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${token}`
+      }),
     };
-    const subscribe = JSON.stringify(subscriber)
-    this.publicIdCounter++;
-    subscriber.PublicId = this.publicIdCounter;
-    return this.http.post(`${this.BaseUrl}subscribers/`, subscribe, httpOptions);
+    return this.http.post<any>(`${this.BaseUrl}subscribers/`, subscribers, httpOptions);
   }
 
   updateSubscriber(subscriber: any){
