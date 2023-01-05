@@ -1,6 +1,18 @@
 .table{
     overflow: auto;
-    height: 400px;
+    height: 300px;
+}
+
+.td{
+    height: 1px !important;
+}
+form{
+    overflow: auto;
+    height: 55vh;
+}
+.spinner{
+    width: 200px;
+    height: 700px !important;
 }
 @media only screen   
 and (min-device-width : 768px)   

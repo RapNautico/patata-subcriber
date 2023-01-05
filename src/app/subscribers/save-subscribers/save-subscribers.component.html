@@ -1,6 +1,7 @@
 <section class="container-fluid with-maxwidth">
     <article>
         <h2 class="article-title">New Subscriber</h2>
+        <mat-progress-spinner class="spinner" *ngIf="loading" [color]="'accent'" [mode]="'indeterminate'" [diameter]="50"></mat-progress-spinner>
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -26,29 +27,29 @@
                       </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                      <tr>
-                        <td>
+                      <tr *ngFor=" let subscriber of subscribers; let i = index" class="td">
+                        <td class="td">
                             <input type="text" name="subscriber.Name" id="subscriber.Name" class="form-control" required formControlName="Name">
                         </td>
-                        <td>
+                        <td class="td">
                             <input type="text" name="subscriber.Email" id="subscriber.Email" class="form-control" required formControlName="Email">
                         </td>
-                        <td>
+                        <td class="td">
                             <input type="text" name="subscriber.CountryCode" id="subscriber.CountryCode" class="form-control" required formControlName="CountryCode">
                         </td>
-                        <td>
+                        <td class="td">
                             <input type="text" name="subscriber.PhoneNumber" id="subscriber.PhoneNumber" class="form-control" required formControlName="PhoneNumber">
                         </td>
-                        <td>
+                        <td class="td">
                             <input type="text" name="subscriber.Area" id="subscriber.Area" class="form-control" formControlName="Area">
                         </td>
-                        <td>
+                        <td class="td">
                             <input type="text" name="subscriber.JobTitle" id="subscriber.JobTitle" class="form-control" formControlName="JobTitle">
                         </td>
-                        <td>
+                        <td class="td">
                             <input type="text" name="subscriber.Topics" id="subscriber.Topics" class="form-control" formControlName="Topics">
                         </td>
-                        <td>
+                        <td class="td">
                             <a style="color: red;" (click)="deleteSubscriber(subscribers)">
                                 <i class="material-icons">delete</i>
                             </a>

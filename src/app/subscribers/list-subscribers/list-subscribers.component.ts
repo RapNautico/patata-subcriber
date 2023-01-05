@@ -47,6 +47,8 @@ export class ListSubscribersComponent implements OnInit {
       (data) => {
         this.subscribers = data
         this.dataSource = new MatTableDataSource(this.subscribers.Data)
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
       }
     )
   }
@@ -54,7 +56,7 @@ export class ListSubscribersComponent implements OnInit {
   ngAfterViewInit(){
     this.dataSource = new MatTableDataSource(this.subscribers.Count);
     this.dataSource.paginator = this.paginator;
-    this.dataSource.paginator.pageSize = 25;
+    this.dataSource.paginator.pageSize = 5;
   }
 
   applyFilter(event: Event) {
@@ -79,6 +81,7 @@ export class ListSubscribersComponent implements OnInit {
             })
             this.loading = false
             this.router.navigate(['/app/subscribers']);
+            this.getSubscribers();
           },
           (error) => {
             this.loading = false
