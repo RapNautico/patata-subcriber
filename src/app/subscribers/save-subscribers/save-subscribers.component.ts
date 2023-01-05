@@ -14,6 +14,8 @@ import { SubscribersService } from '../service/subscribers.service';
 })
 export class SaveSubscribersComponent implements OnInit {
 
+  public loading = false;
+
   formName:string = "";
   saved:boolean = false;
   subscriber:any = [];
@@ -42,7 +44,7 @@ export class SaveSubscribersComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.getSubcribers();
+    this.getSubscribers();
   }
 
   setSubscriber(){
@@ -61,7 +63,7 @@ export class SaveSubscribersComponent implements OnInit {
     )
   }
 
-  getSubcribers(){
+  getSubscribers(){
     this.subscribersService.getSubscribers().subscribe(
       (data) => {
         this.subscriber = data
@@ -84,6 +86,7 @@ export class SaveSubscribersComponent implements OnInit {
       ]
     }
     if (this.subscriber.Data.Id == null) {
+      this.loading = true
       this.subscribersService.createSubscriber(subscribers).subscribe(
         (data) => {
           this.snackBar.open('Subscriber successfully created.', '', {
@@ -91,7 +94,9 @@ export class SaveSubscribersComponent implements OnInit {
             panelClass: 'completo',
             horizontalPosition: 'right'
           });
+          this.loading = false
           this.router.navigate(['/app/subscribers']);
+          this.getSubscribers();
         }
       )
     }

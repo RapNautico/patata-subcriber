@@ -11,6 +11,7 @@
                     </div>
                 </div>
             </div>
+            <mat-progress-spinner *ngIf="loading" [color]="'accent'" [mode]="'indeterminate'" [diameter]="50"></mat-progress-spinner>
             <form role="form" [formGroup]="subsForm" #form="ngForm">
                 <table class="table mt-3">
                     <thead>

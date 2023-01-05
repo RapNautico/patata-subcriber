@@ -8,6 +8,7 @@
 					<input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
 				  </mat-form-field>
                     <div class="example-container mat-elevation-z8">
+                      <mat-progress-spinner *ngIf="loading" [color]="'accent'" [mode]="'indeterminate'" [diameter]="50"></mat-progress-spinner>
                         <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
                       
                           <ng-container matColumnDef="SystemId">
