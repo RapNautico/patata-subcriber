@@ -152,7 +152,10 @@
                       
                     </div>
                     <mat-paginator 
-                    [length]="subscribers.Count"></mat-paginator>
+                      [length]="subscribers.Count"
+                      [pageSize]="paginator.pageSize"
+                      [pageIndex]="paginator.pageIndex" 
+                      [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
 			</div>
 		</div>
 	</article>

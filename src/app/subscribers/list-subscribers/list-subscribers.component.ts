@@ -48,6 +48,7 @@ export class ListSubscribersComponent implements OnInit {
         this.subscribers = data
         this.dataSource = new MatTableDataSource(this.subscribers.Data)
         this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
       }
     )
   }

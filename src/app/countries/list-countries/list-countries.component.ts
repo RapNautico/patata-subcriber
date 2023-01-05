@@ -37,6 +37,7 @@ export class ListCountriesComponent implements OnInit {
         (data) =>{
           this.countries = data;
           this.dataSource = new MatTableDataSource(this.countries.Data);
+          this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
         }
         )
