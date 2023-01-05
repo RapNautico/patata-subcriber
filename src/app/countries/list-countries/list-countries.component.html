@@ -9,23 +9,23 @@
 				  </mat-form-field>
 				  
 				  <div class="example-container mat-elevation-z8">
-					<table mat-table [dataSource]="dataSource">
+					<table mat-table [dataSource]="dataSource" matSort>
 				  
 					  <!-- ID Column -->
 					  <ng-container matColumnDef="Code">
-						<th mat-header-cell *matHeaderCellDef> Code </th>
+						<th mat-header-cell *matHeaderCellDef mat-sort-header> Code </th>
 						<td mat-cell *matCellDef="let row"> {{row.Code}} </td>
 					  </ng-container>
 				  
 					  <!-- Progress Column -->
 					  <ng-container matColumnDef="Name">
-						<th mat-header-cell *matHeaderCellDef> Name </th>
+						<th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
 						<td mat-cell *matCellDef="let row"> {{row.Name}} </td>
 					  </ng-container>
 				  
 					  <!-- Name Column -->
 					  <ng-container matColumnDef="PhoneCode">
-						<th mat-header-cell *matHeaderCellDef> PhoneCode </th>
+						<th mat-header-cell *matHeaderCellDef mat-sort-header> PhoneCode </th>
 						<td mat-cell *matCellDef="let row"> {{row.PhoneCode}} </td>
 					  </ng-container>
 				  

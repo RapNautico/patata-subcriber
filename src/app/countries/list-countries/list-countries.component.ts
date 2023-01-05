@@ -37,6 +37,7 @@ export class ListCountriesComponent implements OnInit {
         (data) =>{
           this.countries = data;
           this.dataSource = new MatTableDataSource(this.countries.Data);
+          this.dataSource.sort = this.sort;
         }
         )
       }
@@ -45,7 +46,6 @@ export class ListCountriesComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.countries.Count);
     this.dataSource.paginator = this.paginator;
     this.dataSource.paginator.pageSize = 10;
-    this.dataSource.sort = this.sort;
   }
   
   applyFilter(event: Event) {
