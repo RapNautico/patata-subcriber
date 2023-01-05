@@ -89,6 +89,7 @@ export class SaveSubscribersComponent implements OnInit {
       this.loading = true
       this.subscribersService.createSubscriber(subscribers).subscribe(
         (data) => {
+          this.subscribers.push({data})
           this.snackBar.open('Subscriber successfully created.', '', {
             duration: 5000,
             panelClass: 'completo',

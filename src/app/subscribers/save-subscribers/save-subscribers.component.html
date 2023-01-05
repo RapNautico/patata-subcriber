@@ -1,6 +1,7 @@
 <section class="container-fluid with-maxwidth">
     <article>
         <h2 class="article-title">New Subscriber</h2>
+        <mat-progress-spinner class="spinner" *ngIf="loading" [color]="'accent'" [mode]="'indeterminate'" [diameter]="50"></mat-progress-spinner>
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -11,7 +12,6 @@
                     </div>
                 </div>
             </div>
-            <mat-progress-spinner *ngIf="loading" [color]="'accent'" [mode]="'indeterminate'" [diameter]="50"></mat-progress-spinner>
             <form role="form" [formGroup]="subsForm" #form="ngForm">
                 <table class="table mt-3">
                     <thead>

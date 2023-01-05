@@ -56,7 +56,7 @@ export class ListSubscribersComponent implements OnInit {
   ngAfterViewInit(){
     this.dataSource = new MatTableDataSource(this.subscribers.Count);
     this.dataSource.paginator = this.paginator;
-    this.dataSource.paginator.pageSize = 25;
+    this.dataSource.paginator.pageSize = 5;
   }
 
   applyFilter(event: Event) {

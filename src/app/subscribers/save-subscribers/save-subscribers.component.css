@@ -10,6 +10,10 @@ form{
     overflow: auto;
     height: 55vh;
 }
+.spinner{
+    width: 200px;
+    height: 700px !important;
+}
 @media only screen   
 and (min-device-width : 768px)   
 and (max-device-width : 1029px){
